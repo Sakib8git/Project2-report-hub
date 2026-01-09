@@ -66,7 +66,7 @@ const AssignedIssues = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full text-left text-sm sm:text-base">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="">
               <th className="p-2">ID</th>
               <th className="p-2">Title</th>
               <th className="p-2">Status</th>
@@ -78,7 +78,7 @@ const AssignedIssues = () => {
             {issues.map((issue) => (
               <tr
                 key={issue._id}
-                className={issue.boosted ? "bg-yellow-50 font-semibold" : ""}
+                className={issue.boosted ? " font-semibold" : ""}
               >
                 <td className="p-2 whitespace-nowrap">{issue._id}</td>
                 <td className="p-2 whitespace-nowrap">{issue.title}</td>

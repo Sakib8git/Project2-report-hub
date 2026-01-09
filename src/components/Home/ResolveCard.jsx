@@ -96,7 +96,7 @@ const ResolveCard = () => {
                 <div className="flex justify-end items-center mt-4">
                   <Link
                     to={`/issue-details/${resolve._id}`}
-                    className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    className="px-3 py-1 bg-[#16476A] text-white rounded hover:bg-[#3B9797] transition-all"
                   >
                     View Details
                   </Link>

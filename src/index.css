@@ -1,2 +1,19 @@
 @import 'tailwindcss';
 @plugin "daisyui";
+
+/* Utility classes for consistent button and text styling */
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary/90;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white hover:bg-secondary/90;
+}
+
+.text-neutral {
+  @apply text-neutral;
+}
+
+.bg-neutral {
+  @apply bg-neutral;
+}

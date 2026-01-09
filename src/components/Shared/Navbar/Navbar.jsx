@@ -1,28 +1,35 @@
 import Container from "../Container";
 import { AiOutlineMenu } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 import avatarImg from "../../../assets/images/placeholder.jpg";
+import Switch from "../../ThemeSwitch/Switch";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  // apply theme on load
+  useEffect(() => {
+    document.querySelector("html").setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // toggle function
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
-    <div className="fixed w-full bg-white z-10 shadow-sm">
-      <div className="py-4 ">
+    <div className="fixed w-full bg-base-100 text-base-content z-10 shadow-sm">
+      <div className="py-4">
         <Container>
           <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
             {/* Logo */}
             <Link to="/">
-              <h2
-                className="text-2xl sm:text-4xl font-extrabold 
-               bg-gradient-to-r from-green-500 to-blue-600 
-               bg-clip-text text-transparent"
-              >
-                ReportHub
-              </h2>
+              <h2 className="text-2xl sm:text-4xl font-extrabold">ReportHub</h2>
             </Link>
 
             {/* Main Menu */}
@@ -39,7 +46,6 @@ const Navbar = () => {
               >
                 All Reports
               </Link>
-              {/* ✅ About & Feedback visible only on md+ */}
               <Link
                 to="/about"
                 className="hidden md:block text-sm font-semibold hover:text-blue-500 transition"
@@ -78,36 +84,36 @@ const Navbar = () => {
               </div>
 
               {isOpen && (
-                <div className="absolute rounded-xl shadow-md w-[60vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm">
+                <div className="absolute rounded-xl shadow-md w-[60vw] md:w-[10vw] bg-base-100 text-base-content overflow-hidden right-0 top-12 text-sm">
                   <div className="flex flex-col cursor-pointer">
                     {/* ✅ About & Feedback visible only on sm */}
                     <Link
                       to="/about"
-                      className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                      className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
                     >
                       About
                     </Link>
                     <Link
                       to="/feedback"
-                      className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                      className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
                     >
                       Feedback
                     </Link>
 
                     {user ? (
                       <>
-                        <div className="px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer">
+                        <div className="px-4 py-3 hover:bg-[#cbeef3] hover:text-[#1A4A6C] transition font-semibold cursor-pointer">
                           {user.displayName}
                         </div>
                         <Link
                           to="/dashboard"
-                          className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                          className="px-4 py-3 hover:bg-[#cbeef3] hover:text-[#1A4A6C] transition font-semibold"
                         >
                           Dashboard
                         </Link>
                         <div
                           onClick={logOut}
-                          className="px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer"
+                          className="px-4 py-3 hover:bg-[#cbeef3] hover:text-[#1A4A6C] transition font-semibold cursor-pointer"
                         >
                           Logout
                         </div>
@@ -116,18 +122,24 @@ const Navbar = () => {
                       <>
                         <Link
                           to="/login"
-                          className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                          className="px-4 py-3 hover:bg-[#cbeef3] hover:text-[#1A4A6C] transition font-semibold"
                         >
                           Login
                         </Link>
                         <Link
                           to="/signup"
-                          className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                          className="px-4 py-3 hover:bg-[#cbeef3] hover:text-[#1A4A6C] transition font-semibold"
                         >
                           Sign Up
                         </Link>
                       </>
                     )}
+
+                    {/* ✅ Theme Toggle Button */}
+                    {/* ✅ Theme Toggle Button */}
+<div className="px-4 py-3 transition font-semibold cursor-pointer">
+  <Switch onChange={toggleTheme} checked={theme === "dark"} />
+</div>
                   </div>
                 </div>
               )}

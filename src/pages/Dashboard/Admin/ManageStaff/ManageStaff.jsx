@@ -192,8 +192,8 @@ const ManageStaff = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-3xl font-extrabold mb-6 text-gray-800 border-b pb-2">
+    <div className="p-6  min-h-screen">
+      <h1 className="text-3xl font-extrabold mb-6  border-b pb-2">
         Manage Staff
       </h1>
 
@@ -217,10 +217,10 @@ const ManageStaff = () => {
 
       {/* Staff Table */}
       <Container>
-        <div className="overflow-x-auto rounded-lg shadow-lg bg-white">
+        <div className="overflow-x-auto rounded-lg shadow-lg ">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-gray-100 text-gray-700 uppercase text-sm">
+              <tr className=" uppercase text-sm">
                 <th className="p-3">Photo</th>
                 <th className="p-3">Name</th>
                 <th className="p-3">Email</th>
@@ -233,8 +233,8 @@ const ManageStaff = () => {
               {staffList.map((staff, idx) => (
                 <tr
                   key={staff._id}
-                  className={`border-b hover:bg-gray-50 ${
-                    idx % 2 === 0 ? "bg-white" : "bg-gray-50"
+                  className={`border-b  ${
+                    idx % 2 === 0
                   }`}
                 >
                   <td className="p-3">
@@ -250,12 +250,12 @@ const ManageStaff = () => {
                       </div>
                     )}
                   </td>
-                  <td className="p-3 font-medium text-gray-800">
+                  <td className="p-3 font-medium ">
                     {staff.name}
                   </td>
-                  <td className="p-3 text-gray-600">{staff.email}</td>
-                  <td className="p-3 text-gray-600">{staff.phone}</td>
-                  <td className="p-3 capitalize text-indigo-600 font-semibold">
+                  <td className="p-3 ">{staff.email}</td>
+                  <td className="p-3 ">{staff.phone}</td>
+                  <td className="p-3 capitalize text-yellow-300 font-semibold">
                     {staff.role}
                   </td>
                   <td className="p-3 flex gap-2">

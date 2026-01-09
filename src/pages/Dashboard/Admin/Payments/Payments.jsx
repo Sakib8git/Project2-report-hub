@@ -128,17 +128,17 @@ const Payments = () => {
       {/* ✅ Responsive Table */}
       <Container>
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-amber-50 rounded-2xl text-left 
+          <table className="min-w-full  rounded-2xl text-left 
                             text-xs sm:text-sm md:text-base lg:text-lg">
             <thead>
-              <tr className="bg-gray-100">
+              <tr className="">
                 <th className="p-2 md:p-3">Payment ID</th>
                 <th className="p-2 md:p-3">User</th>
                 <th className="p-2 md:p-3">Amount</th>
                 <th className="p-2 md:p-3">Method</th>
                 <th className="p-2 md:p-3">Status</th>
                 <th className="p-2 md:p-3">Date</th>
-                <th className="p-2 md:p-3">Action</th>
+                {/* <th className="p-2 md:p-3">Action</th> */}
               </tr>
             </thead>
             <tbody>
@@ -157,7 +157,7 @@ const Payments = () => {
                   </td>
                   <td className="p-2 md:p-3 whitespace-nowrap">{payment.date}</td>
                   <td className="p-2 md:p-3">
-                    <button
+                    {/* <button
                       className="px-2 py-1 md:px-3 md:py-2 
                                  bg-gradient-to-r from-blue-500 to-indigo-600 
                                  text-white font-semibold rounded-lg shadow-md 
@@ -166,7 +166,7 @@ const Payments = () => {
                                  text-xs sm:text-sm md:text-base"
                     >
                       Download
-                    </button>
+                    </button> */}
                   </td>
                 </tr>
               ))}

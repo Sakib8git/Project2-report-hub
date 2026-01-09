@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router";
+import RelevantContent from "./RelevantContent";
 
 const Feedback = () => {
   const { user } = useAuth();
@@ -30,14 +31,14 @@ const Feedback = () => {
         "/comments",
         {
           ...formData,
-          avatar: user?.photoURL, 
+          avatar: user?.photoURL,
         },
         { withCredentials: true } // verifyJWT token send hobe
       );
 
       if (res.data.insertedId) {
         toast.success("Comment submitted successfully!");
-        navigate("/")
+        navigate("/");
         setFormData({
           name: user?.displayName || "",
           email: user?.email || "",
@@ -95,6 +96,7 @@ const Feedback = () => {
           </div>
           <Button label="Submit" type="submit" className="w-full" />
         </form>
+        <RelevantContent />
       </div>
     </StyledWrapper>
   );
@@ -105,75 +107,93 @@ const StyledWrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+  padding: 1rem;
 
   .card {
-    background-color: #fff;
-    border-radius: 16px;
-    padding: 30px;
+    background-color: var(--b1);
+    color: var(--bc);
+    border-radius: 1rem;
+    padding: 2rem;
     width: 100%;
-    max-width: 420px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.6s ease-in-out;
+    max-width: 480px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
   }
 
   .title {
-    font-size: 26px;
+    font-size: 1.75rem;
     font-weight: 700;
     text-align: center;
-    color: #2e7d32;
-    margin-bottom: 20px;
+    color: var(--su);
+    margin-bottom: 1.5rem;
   }
 
   .form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 1.25rem;
   }
 
   .group {
     position: relative;
   }
 
-  .form .group label {
-    font-size: 14px;
-    color: #666;
-    position: absolute;
-    top: -10px;
-    left: 12px;
-    background-color: #fff;
-    padding: 0 4px;
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-
-  .form .group input,
-  .form .group textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1.5px solid #ccc;
-    outline: none;
+  .group input,
+  .group textarea {
     width: 100%;
-    background-color: transparent;
-    font-size: 15px;
+    padding: 1rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: 0.75rem;
+    background-color: var(--b1);
+    color: var(--bc);
+    font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 0 0 1px rgba(100, 116, 139, 0.1); /* subtle inner border */
+  }
+  .group input:hover,
+  .group textarea:hover {
+    border-color: var(--neutral);
   }
 
-  .form .group input:focus,
-  .form .group textarea:focus {
-    border-color: #2e7d32;
-    box-shadow: 0 0 6px rgba(46, 125, 50, 0.3);
-  }
-
-  .form .group textarea {
+  .group textarea {
     resize: none;
     min-height: 120px;
+  }
+
+  .group input:focus,
+  .group textarea:focus {
+    border-color: var(--su);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+  }
+
+  .group label {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    background-color: var(--b1);
+    color: var(--bc);
+    padding: 0 0.25rem;
+    font-size: 0.875rem;
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+
+  .group input:focus + label,
+  .group input:not(:placeholder-shown) + label,
+  .group textarea:focus + label,
+  .group textarea:not(:placeholder-shown) + label {
+    top: -0.6rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--su);
+    background-color: var(--b1);
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(15px);
+      transform: translateY(10px);
     }
     to {
       opacity: 1;

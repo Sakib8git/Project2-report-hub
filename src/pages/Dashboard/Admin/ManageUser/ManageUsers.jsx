@@ -70,7 +70,7 @@ const ManageUsers = () => {
       <div className="overflow-x-auto">
         <table className="w-full text-left min-w-[600px]">
           <thead>
-            <tr className="bg-gray-100 text-sm md:text-base">
+            <tr className=" text-sm md:text-base">
               {/* ID column hidden on small screens */}
               <th className="p-2 hidden sm:table-cell">ID</th>
               <th className="p-2">Name</th>
@@ -97,7 +97,7 @@ const ManageUsers = () => {
                   <td className="p-2 capitalize">{user.role}</td>
                   <td className="p-2 capitalize flex items-center gap-2">
                     {user.status === "premium" ? (
-                      <span className="px-2 py-1 text-xs font-semibold bg-yellow-400 text-white rounded-full">
+                      <span className="px-2 py-1 text-xs font-semibold bg-yellow-400  rounded-full">
                         Premium
                       </span>
                     ) : (

@@ -199,13 +199,13 @@ const IssuesCard = () => {
                   <div className="flex justify-between items-center mt-4">
                     <button
                       onClick={() => handleUpvote(issue._id)}
-                      className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600"
+                      className="px-3 py-1 bg-[#31694E] text-white  hover:bg-[#658C58] rounded-xl"
                     >
                       👍🏻Upvote ({issue.upvote || 0})
                     </button>
                     <Link
                       to={`/issue-details/${issue._id}`}
-                      className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+                      className="px-3 py-1 btn-primary rounded-xl"
                     >
                       View Details
                     </Link>

@@ -112,7 +112,7 @@ const AdminIssues = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left min-w-[600px]">
             <thead>
-              <tr className="bg-gray-100 text-sm md:text-base">
+              <tr className=" text-sm md:text-base">
                 <th className="p-2">Title</th>
                 <th className="p-2">Category</th>
                 <th className="p-2">Status</th>
@@ -126,7 +126,7 @@ const AdminIssues = () => {
                 <tr
                   key={issue._id}
                   className={`text-sm md:text-base ${
-                    issue.boosted ? "bg-yellow-50 font-semibold" : ""
+                    issue.boosted ? " font-semibold" : ""
                   }`}
                 >
                   <td className="p-2">{issue.title}</td>

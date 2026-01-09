@@ -40,11 +40,11 @@ export default function ProfileModal({
         <div className="flex min-h-full items-center justify-center p-4">
           <DialogPanel
             transition
-            className="w-full max-w-md rounded-xl bg-white p-6 shadow-lg duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
+            className="w-full max-w-md rounded-xl bg-base-100 p-6 shadow-lg duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
           >
             <DialogTitle
               as="h3"
-              className="text-lg font-bold text-gray-800 mb-4"
+              className="text-lg font-bold  mb-4"
             >
               Update Profile
             </DialogTitle>
@@ -81,7 +81,7 @@ export default function ProfileModal({
               {/* Preview */}
               {preview && (
                 <div className="mb-3">
-                  <p className="text-sm text-gray-600 mb-1">Preview:</p>
+                  <p className="text-sm  mb-1">Preview:</p>
                   <img
                     src={preview}
                     alt="preview"

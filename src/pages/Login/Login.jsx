@@ -34,20 +34,22 @@ const Login = () => {
       toast.error(err?.message);
     }
   };
+  // inside Login component
 
-  // Handle Google Signin
-  // const handleGoogleSignIn = async () => {
-  //   try {
-  //     //User Registration using google
-  //     await signInWithGoogle();
-  //     navigate(from, { replace: true });
-  //     toast.success("Login Successful");
-  //   } catch (err) {
-  //     console.log(err);
-  //     setLoading(false);
-  //     toast.error(err?.message);
-  //   }
-  // };
+  // helper function to auto-fill credentials
+  const fillCredentials = (role) => {
+    const form = document.querySelector("form");
+    if (!form) return;
+
+    if (role === "staff") {
+      form.email.value = "qalafigo@mailinator.com";
+      form.password.value = "Anik1122";
+    } else if (role === "admin") {
+      form.email.value = "admin@sakib.com";
+      form.password.value = "Anik1122";
+    }
+  };
+
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithGoogle();
@@ -148,7 +150,7 @@ const Login = () => {
         </div>
         <div
           onClick={handleGoogleSignIn}
-          className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer"
+          className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer rounded-lg"
         >
           <FcGoogle size={32} />
 
@@ -165,6 +167,22 @@ const Login = () => {
           </Link>
           .
         </p>
+        <div className="flex justify-center gap-2 mt-4">
+          <button
+            type="button"
+            onClick={() => fillCredentials("staff")}
+            className="bg-green-500 text-white px-3 py-2 rounded-md"
+          >
+            Demo Staff
+          </button>
+          <button
+            type="button"
+            onClick={() => fillCredentials("admin")}
+            className="bg-purple-500 text-white px-3 py-2 rounded-md"
+          >
+            Demo Admin
+          </button>
+        </div>
       </div>
     </div>
   );
