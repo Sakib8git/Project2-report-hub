@@ -25,11 +25,11 @@ const TestimonialsSection = () => {
           What Citizens Say
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1  md:grid-cols-3 gap-8">
           {comments.map((c) => (
             <div
               key={c._id}
-              className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center"
+              className="p-6  rounded-lg bg-base-200 hover:bg-base-100 shadow hover:shadow-lg transition flex flex-col items-center text-center"
             >
               <img
                 src={c.avatar || "https://via.placeholder.com/80?text=U"}
@@ -37,10 +37,10 @@ const TestimonialsSection = () => {
                 className="w-20 h-20 rounded-full mb-4 border-2 border-green-500"
               />
               <h3 className="text-lg font-semibold">{c.name}</h3>
-              <p className="mt-2 text-gray-600 text-sm italic">
+              <p className="mt-2  text-sm italic">
                 "{c.comment}"
               </p>
-              <p className="mt-3 text-xs text-gray-500">
+              <p className="mt-3 text-xs ">
                 {c.createdAt ? new Date(c.createdAt).toLocaleDateString("en-GB") : "N/A"}
               </p>
             </div>

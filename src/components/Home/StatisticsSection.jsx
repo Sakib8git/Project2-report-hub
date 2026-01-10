@@ -21,7 +21,7 @@ const AnimatedNumber = ({ target }) => {
   }, [target, count]);
 
   return (
-    <motion.span className="text-3xl font-extrabold text-black">
+    <motion.span className="text-3xl font-extrabold ">
       {rounded}
     </motion.span>
   );
@@ -99,17 +99,17 @@ const StatisticsSection = () => {
           Our Impact in Numbers
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className="flex flex-col items-center p-6 bg-white rounded-lg shadow hover:shadow-lg transition"
+              className="flex flex-col bg-base-200 hover:bg-base-100 items-center p-6  rounded-lg shadow hover:shadow-lg transition"
             >
               {stat.icon}
               <div className="mt-4">
                 <AnimatedNumber target={stat.value} />
               </div>
-              <p className="mt-2 text-gray-600 text-sm">{stat.label}</p>
+              <p className="mt-2 text-sm">{stat.label}</p>
             </div>
           ))}
         </div>

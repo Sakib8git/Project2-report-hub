@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 import avatarImg from "../../../assets/images/placeholder.jpg";
 import Switch from "../../ThemeSwitch/Switch";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -34,30 +35,60 @@ const Navbar = () => {
 
             {/* Main Menu */}
             <div className="flex gap-6 items-center">
-              <Link
+              <NavLink
                 to="/"
-                className="text-sm font-semibold hover:text-green-600 transition"
+                className={({ isActive }) =>
+                  `text-sm font-semibold transition ${
+                    isActive
+                      ? "underline text-green-600"
+                      : "hover:text-green-600"
+                  }`
+                }
               >
                 Home
-              </Link>
-              <Link
+              </NavLink>
+
+              <NavLink
                 to="/all-issues"
-                className="text-sm font-semibold hover:text-green-600 transition"
+                className={({ isActive }) =>
+                  `text-sm font-semibold transition ${
+                    isActive
+                      ? "underline text-green-600"
+                      : "hover:text-green-600"
+                  }`
+                }
               >
                 All Reports
-              </Link>
-              <Link
+              </NavLink>
+
+              <NavLink
                 to="/about"
-                className="hidden md:block text-sm font-semibold hover:text-blue-500 transition"
+                className={({ isActive }) =>
+                  `hidden md:block text-sm font-semibold transition ${
+                    isActive
+                      ? "underline text-green-600"
+                      : "hover:text-green-600"
+                  }`
+                }
               >
                 About
-              </Link>
-              <Link
-                to="/feedback"
-                className="hidden md:block text-sm font-semibold hover:text-blue-500 transition"
-              >
-                Feedback
-              </Link>
+              </NavLink>
+
+              {/* ✅ Feedback link only if user is logged in */}
+              {user && (
+                <NavLink
+                  to="/feedback"
+                  className={({ isActive }) =>
+                    `hidden md:block text-sm font-semibold transition ${
+                      isActive
+                        ? "underline text-green-600"
+                        : "hover:text-green-600"
+                    }`
+                  }
+                >
+                  Feedback
+                </NavLink>
+              )}
             </div>
 
             {/* Dropdown Menu */}
@@ -86,19 +117,12 @@ const Navbar = () => {
               {isOpen && (
                 <div className="absolute rounded-xl shadow-md w-[60vw] md:w-[10vw] bg-base-100 text-base-content overflow-hidden right-0 top-12 text-sm">
                   <div className="flex flex-col cursor-pointer">
-                    {/* ✅ About & Feedback visible only on sm */}
-                    <Link
-                      to="/about"
-                      className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
-                    >
-                      About
-                    </Link>
-                    <Link
+                    {/* <Link
                       to="/feedback"
                       className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
                     >
                       Feedback
-                    </Link>
+                    </Link> */}
 
                     {user ? (
                       <>
@@ -110,6 +134,12 @@ const Navbar = () => {
                           className="px-4 py-3 hover:bg-[#cbeef3] hover:text-[#1A4A6C] transition font-semibold"
                         >
                           Dashboard
+                        </Link>
+                        <Link
+                          to="/feedback"
+                          className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
+                        >
+                          Feedback
                         </Link>
                         <div
                           onClick={logOut}
@@ -134,12 +164,22 @@ const Navbar = () => {
                         </Link>
                       </>
                     )}
+                    {/* ✅ About & Feedback visible only on sm */}
+                    <Link
+                      to="/about"
+                      className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
+                    >
+                      About
+                    </Link>
 
                     {/* ✅ Theme Toggle Button */}
                     {/* ✅ Theme Toggle Button */}
-<div className="px-4 py-3 transition font-semibold cursor-pointer">
-  <Switch onChange={toggleTheme} checked={theme === "dark"} />
-</div>
+                    <div className="px-4 py-3 transition font-semibold cursor-pointer">
+                      <Switch
+                        onChange={toggleTheme}
+                        checked={theme === "dark"}
+                      />
+                    </div>
                   </div>
                 </div>
               )}

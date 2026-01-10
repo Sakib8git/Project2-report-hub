@@ -143,7 +143,7 @@ const IssueDetails = () => {
   // boost
   const handleBoost = async () => {
     try {
-      // Boost payment info backend এ পাঠানো হবে
+      
       const paymentInfo = {
         issueId: issue._id,
         email: user?.email,
@@ -188,7 +188,7 @@ const IssueDetails = () => {
           </div>
 
           {/* Info */}
-          <div className="md:w-1/2 bg-white shadow rounded-lg p-6 flex flex-col justify-between">
+          <div className="md:w-1/2  shadow rounded-lg p-6 flex flex-col justify-between">
             <div>
               <p>
                 <span className="font-semibold">Category:</span>{" "}
@@ -274,7 +274,7 @@ const IssueDetails = () => {
               )} */}
               {isBlocked ? (
                 <p className="text-red-600 font-semibold mt-2">
-                  🚫 You are blocked. Actions are disabled.
+                   You are blocked. Actions are disabled.
                 </p>
               ) : (
                 canBoost && (
@@ -316,7 +316,7 @@ const IssueDetails = () => {
                   <button
                     type="button"
                     onClick={() => setShowModal(false)}
-                    className="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400"
+                    className="px-3 py-1  rounded hover:bg-gray-400"
                   >
                     Cancel
                   </button>
@@ -333,8 +333,8 @@ const IssueDetails = () => {
         )}
 
         {/* Staff Info */}
-        <div className="bg-white shadow rounded-lg p-6 mt-10">
-          <h2 className="text-2xl font-bold mb-6 text-green-700 text-center">
+        <div className=" shadow rounded-lg p-6 mt-10">
+          <h2 className="text-2xl font-bold mb-6  text-center">
             Issue Progress Timeline
           </h2>
         </div>
@@ -345,16 +345,16 @@ const IssueDetails = () => {
             <div className="mb-10 ml-6">
               <div className="absolute w-3 h-3 bg-green-500 rounded-full -left-1.5 border border-white"></div>
               <h3 className="text-lg font-semibold">Reported By</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 <span className="font-semibold">Name:</span>{" "}
                 {issue.reporter.name}
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 <span className="font-semibold">Email:</span>{" "}
                 {issue.reporter.email}
               </p>
               {issue.lastUpdated && (
-                <p className="text-sm text-gray-600">
+                <p className="text-sm ">
                   <span className="font-semibold">Last Updated:</span>{" "}
                   {new Date(issue.lastUpdated).toLocaleString("en-US", {
                     month: "numeric",
@@ -376,28 +376,28 @@ const IssueDetails = () => {
               <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-7.5 border border-white"></div>
               <h3 className="text-lg font-semibold">Assigned Staff</h3>
 
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 <span className="font-semibold">Name:</span>{" "}
                 {issue.assignedStaff?.name || "N/A"}
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 <span className="font-semibold">Role:</span>{" "}
                 {issue.staffInfo?.role || "Staff"}
               </p>
 
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 <span className="font-semibold">Issue Status:</span>{" "}
                 {issue.status || "N/A"}
               </p>
 
               {/* Optional: show assigned date */}
               {issue.statusUpdatedAt && (
-                <p className="text-sm text-gray-600">
+                <p className="text-sm ">
                   <span className="font-semibold">Assigned On:</span>{" "}
                   {new Date(issue.statusUpdatedAt).toLocaleString()}
                 </p>
               )}
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs  mt-1">
                 Assigned by:{" "}
                 <span className="font-semibold text-blue-600">
                   {issue.assignedBy || "Admin Panel"}
@@ -413,20 +413,20 @@ const IssueDetails = () => {
             <div className="mb-10 ml-6">
               <div className="absolute w-3 h-3 bg-purple-500 rounded-full -left-1.5 border border-white"></div>
               <h3 className="text-lg font-semibold">Issue Closed</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 <span className="font-semibold">Resolved By:</span>{" "}
                 {issue.assignedStaff?.name || "N/A"}
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 <span className="font-semibold">Status:</span> {issue.status}
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 <span className="font-semibold ">Closed By:<span className="text-blue-600">Admin Panel</span> </span>{" "}
                 {issue.staffInfo}
               </p>
               
               {issue.resolvedAt && (
-                <p className="text-sm text-gray-600">
+                <p className="text-sm ">
                   <span className="font-semibold">Resolved On:</span>{" "}
                   {new Date(issue.resolvedAt).toLocaleString("en-US", {
                     month: "numeric",

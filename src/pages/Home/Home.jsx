@@ -11,6 +11,7 @@ import Button from "../../components/Shared/Button/Button";
 import Container from "../../components/Shared/Container";
 import StatisticsSection from "../../components/Home/StatisticsSection";
 import TestimonialsSection from "../../components/Home/TestimonialsSection";
+import FAQ from "../../components/Home/FAQ";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 }, // niche theke
@@ -21,17 +22,16 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
+        transition={{ duration: 0.8 }}
+      >
+        <Banner />
+      </motion.div>
       <Container>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.8 }}
-        >
-          <Banner />
-        </motion.div>
-
         <motion.div
           initial="hidden"
           animate="visible"
@@ -85,6 +85,14 @@ const Home = () => {
           transition={{ duration: 2 }}
         >
           <TestimonialsSection />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          transition={{ duration: 2 }}
+        >
+          <FAQ></FAQ>
         </motion.div>
       </Container>
     </div>

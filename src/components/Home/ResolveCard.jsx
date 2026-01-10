@@ -38,7 +38,7 @@ const ResolveCard = () => {
 
   return (
     <Container>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pt-12">
+      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8 pt-12">
         {resolvedReports.map((resolve, index) => {
           let positionClass = "";
           if (resolvedReports.length === 6) {
@@ -49,7 +49,7 @@ const ResolveCard = () => {
           return (
             <div
               key={resolve._id}
-              className={`rounded-lg shadow-md overflow-hidden bg-white ${positionClass}`}
+              className={`rounded-lg shadow-md bg-base-200 hover:bg-base-100 overflow-hidden  ${positionClass}`}
             >
               <img
                 src={resolve.image}
@@ -58,7 +58,7 @@ const ResolveCard = () => {
               />
               <div className="p-4">
                 <h3 className="text-lg font-semibold mb-1">{resolve.title}</h3>
-                <p className="text-sm text-gray-600 mb-1">
+                <p className="text-sm  mb-1">
                   Category: {resolve.category}
                 </p>
                 <p className="text-sm mb-1">
@@ -79,16 +79,16 @@ const ResolveCard = () => {
                     {resolve.priority}
                   </span>
                 </p>
-                <p className="text-sm text-gray-600 mb-1">
+                <p className="text-sm  mb-1">
                   Location: {resolve.location}
                 </p>
                 {resolve.description && (
-                  <p className="text-sm text-gray-700 mb-2 line-clamp-2">
+                  <p className="text-sm  mb-2 line-clamp-2">
                     {resolve.description}
                   </p>
                 )}
                 {resolve.reporter && (
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs ">
                     Reported by: {resolve.reporter?.name} (
                     {resolve.reporter?.email})
                   </p>

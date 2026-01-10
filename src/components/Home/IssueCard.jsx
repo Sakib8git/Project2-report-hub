@@ -16,8 +16,8 @@ const IssuesCard = () => {
   const limit = 8;
 
   // ✅ Search & Filter state
-  const [searchInput, setSearchInput] = useState(""); 
-  const [search, setSearch] = useState("");           
+  const [searchInput, setSearchInput] = useState("");
+  const [search, setSearch] = useState("");
   const [status, setStatus] = useState("");
   const [priority, setPriority] = useState("");
   const [category, setCategory] = useState("");
@@ -49,7 +49,9 @@ const IssuesCard = () => {
     queryKey: ["issues", page, search, status, priority, category],
     queryFn: async () => {
       const res = await axiosSecure.get(
-        `${import.meta.env.VITE_API_URL}/reports-paginated?page=${page}&limit=${limit}&search=${search}&status=${status}&priority=${priority}&category=${category}`
+        `${
+          import.meta.env.VITE_API_URL
+        }/reports-paginated?page=${page}&limit=${limit}&search=${search}&status=${status}&priority=${priority}&category=${category}`
       );
       return res.data;
     },
@@ -59,7 +61,7 @@ const IssuesCard = () => {
   const issues = data?.issues || [];
   const totalPages = data?.totalPages || 1;
 
-  //  High priority issues 
+  //  High priority issues
   const sortedIssues = [...issues].sort((a, b) => {
     if (a.priority === "High" && b.priority !== "High") return -1;
     if (a.priority !== "High" && b.priority === "High") return 1;
@@ -68,7 +70,7 @@ const IssuesCard = () => {
 
   const handleUpvote = async (id) => {
     if (isBlocked) {
-      toast.error("🚫 You are blocked");
+      toast.error(" You are blocked");
       navigate("/");
       return;
     }
@@ -144,7 +146,7 @@ const IssuesCard = () => {
             {sortedIssues.map((issue) => (
               <div
                 key={issue._id}
-                className="rounded-lg shadow-md overflow-hidden bg-white"
+                className="rounded-lg shadow-md overflow-hidden "
               >
                 {/* Image */}
                 <img
@@ -156,14 +158,9 @@ const IssuesCard = () => {
                 {/* Content */}
                 <div className="p-4">
                   <h3 className="text-lg font-semibold mb-1">{issue.title}</h3>
-                  <p className="text-sm text-gray-600 mb-1">
-                    Category: {issue.category}
-                  </p>
+                  <p className="text-sm  mb-1">Category: {issue.category}</p>
                   <p className="text-sm mb-1">
-                    Status:{" "}
-                    <span className="font-bold text-blue-600">
-                      {issue.status}
-                    </span>
+                    Status: <span className="font-bold ">{issue.status}</span>
                   </p>
                   <p className="text-sm mb-1">
                     Priority:{" "}
@@ -177,21 +174,20 @@ const IssuesCard = () => {
                       {issue.priority}
                     </span>
                   </p>
-                  <p className="text-sm text-gray-600 mb-1">
-                    Location: {issue.location}
-                  </p>
+                  <p className="text-sm  mb-1">Location: {issue.location}</p>
 
                   {/* Description */}
                   {issue.description && (
-                    <p className="text-sm text-gray-700 mb-2 line-clamp-2">
+                    <p className="text-sm  mb-2 line-clamp-2">
                       {issue.description}
                     </p>
                   )}
 
                   {/* Reporter Info */}
                   {issue.reporter && (
-                    <p className="text-xs text-gray-500">
-                      Reported by: {issue.reporter.name} ({issue.reporter.email})
+                    <p className="text-xs ">
+                      Reported by: {issue.reporter.name} ({issue.reporter.email}
+                      )
                     </p>
                   )}
 
@@ -199,9 +195,9 @@ const IssuesCard = () => {
                   <div className="flex justify-between items-center mt-4">
                     <button
                       onClick={() => handleUpvote(issue._id)}
-                      className="px-3 py-1 bg-[#31694E] text-white  hover:bg-[#658C58] rounded-xl"
+                      className="px-3 py-1 bg-[#57f06d] text-[#063858] hover:text-[#110558]  hover:bg-[#50b95f] rounded-xl"
                     >
-                      👍🏻Upvote ({issue.upvote || 0})
+                    Upvote ({issue.upvote || 0})
                     </button>
                     <Link
                       to={`/issue-details/${issue._id}`}

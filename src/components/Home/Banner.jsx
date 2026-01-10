@@ -11,7 +11,7 @@ import boostImg from "../../assets/images/boost.jpg";
 
 const Banner = () => {
   return (
-    <div className="w-full h-[350px] md:h-[450px] lg:h-[450px] rounded-2xl overflow-hidden">
+    <div className="w-full h-[350px] md:h-[450px] lg:h-[550px] rounded-2xl overflow-hidden">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -33,7 +33,7 @@ const Banner = () => {
               alt="Report Issues"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
               <h1 className="text-3xl md:text-5xl font-bold text-white">
                 Report Issues Easily
               </h1>
@@ -49,7 +49,7 @@ const Banner = () => {
               alt="Track Progress"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
               <h1 className="text-3xl md:text-5xl font-bold text-white">
                 Track Progress in Real-Time
               </h1>
@@ -65,7 +65,7 @@ const Banner = () => {
               alt="Boost Priority"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
               <h1 className="text-3xl md:text-5xl font-bold text-white">
                 Boost Priority with Subscription
               </h1>

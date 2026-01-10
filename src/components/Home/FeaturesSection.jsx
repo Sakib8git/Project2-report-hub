@@ -57,17 +57,17 @@ const features = [
 const FeaturesSection = () => {
   return (
     <StyledWrapper>
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 ">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-green-700">
           Application Features
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {features.map((feature) => (
-            <div key={feature.id} className="card flex flex-col items-center text-center p-6">
+            <div key={feature.id} className="card bg-base-200 hover:bg-base-100 flex flex-col items-center text-center p-6">
               {feature.icon}
               <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
-              <p className="mt-2 text-gray-600 text-sm">{feature.description}</p>
+              <p className="mt-2  text-sm">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -80,11 +80,11 @@ const StyledWrapper = styled.div`
   .card {
     width: 100%;
     min-height: 200px;
-    background: rgb(255, 255, 255);
+    // background: rgb(255, 255, 255);
     border-radius: 0.4em;
     box-shadow: 0.3em 0.3em 0.7em #00000015;
     transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: rgb(250, 250, 250) 0.2em solid;
+    // border: rgb(250, 250, 250) 0.1em solid;
   }
 
   .card:hover {

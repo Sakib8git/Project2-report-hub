@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider> {/* ✅ ThemeProvider wrap করলাম */}
+      <ThemeProvider> 
         <AuthProvider>
           <RouterProvider router={router} />
           <Toaster position="top-right" reverseOrder={false} />
