@@ -45,8 +45,8 @@ const CitizenProfile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
-      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
+    <div className="min-h-screen  py-10 px-4">
+      <div className="max-w-4xl mx-auto  shadow-lg rounded-xl overflow-hidden">
         <img src={coverImg} alt="cover" className="w-full h-48 object-cover" />
 
         <div className="flex flex-col md:flex-row items-center md:items-start px-6 py-8 gap-6">
@@ -60,7 +60,7 @@ const CitizenProfile = () => {
 
           <div className="flex-1 w-full">
             <div className="flex items-center gap-2 mb-2">
-              <h2 className="text-2xl font-bold text-gray-800">
+              <h2 className="text-2xl font-bold ">
                 {profile?.name || user?.displayName}
               </h2>
               {isPremium && (
@@ -70,10 +70,10 @@ const CitizenProfile = () => {
               )}
             </div>
 
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="text-sm  mb-1">
               <strong>Email:</strong> {user?.email}
             </p>
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="text-sm  mb-1">
               <strong>User ID:</strong> {user?.uid}
             </p>
 

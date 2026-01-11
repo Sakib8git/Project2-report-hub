@@ -23,10 +23,7 @@ const Footer = () => {
             </h3>
             <p className="text-sm">
               Email:{" "}
-              <a
-                href="sakib19256@gmail.com"
-                className="hover:text-primary"
-              >
+              <a href="sakib19256@gmail.com" className="hover:text-primary">
                 sakib19256@gmail.com
               </a>
             </p>

@@ -111,8 +111,8 @@ const CitizenStatistics = () => {
             </div>
 
             {/* Chart */}
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <h2 className="text-xl font-semibold text-gray-700 mb-4">
+            <div className="bg-base-200 rounded-xl shadow-md p-6">
+              <h2 className="text-xl font-semibold  mb-4">
                 Issue Status Overview
               </h2>
               <ResponsiveContainer width="100%" height={300}>
@@ -134,7 +134,7 @@ const CitizenStatistics = () => {
 
 // ✅ Reusable Stat Card
 const StatCard = ({ icon, title, value, gradient }) => (
-  <div className="flex flex-col justify-between bg-white rounded-xl shadow-lg p-6 border-t-4 transition hover:scale-[1.02] duration-300">
+  <div className="flex flex-col justify-between bg-base-200 rounded-xl shadow-lg p-6 border-green-500 border-t-4 transition hover:scale-[1.02] duration-300">
     <div className="flex items-center justify-between mb-4">
       <div
         className={`h-14 w-14 rounded-full grid place-items-center text-white text-xl ${gradient}`}
@@ -143,8 +143,8 @@ const StatCard = ({ icon, title, value, gradient }) => (
       </div>
     </div>
     <div className="text-left">
-      <p className="text-lg font-semibold text-gray-700">{title}</p>
-      <h2 className="text-3xl font-bold text-gray-900 mt-1">{value}</h2>
+      <p className="text-lg font-semibold ">{title}</p>
+      <h2 className="text-3xl font-bold  mt-1">{value}</h2>
     </div>
   </div>
 );

@@ -216,8 +216,8 @@ const ManageStaff = () => {
       </button>
 
       {/* Staff Table */}
-      <Container>
-        <div className="overflow-x-auto rounded-lg shadow-lg ">
+      
+        <div className="overflow-x-auto rounded-lg shadow-lg container">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className=" uppercase text-sm">
@@ -280,7 +280,7 @@ const ManageStaff = () => {
             </tbody>
           </table>
         </div>
-      </Container>
+      
 
       {/* Modals */}
       <StaffModal

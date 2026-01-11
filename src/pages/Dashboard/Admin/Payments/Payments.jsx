@@ -126,54 +126,43 @@ const Payments = () => {
       </div>
 
       {/* ✅ Responsive Table */}
-      <Container>
+      
         <div className="overflow-x-auto">
           <table className="min-w-full  rounded-2xl text-left 
-                            text-xs sm:text-sm md:text-base lg:text-lg">
+                            text-xs sm:text-sm md:text-base lg:text-lg ">
             <thead>
               <tr className="">
-                <th className="p-2 md:p-3">Payment ID</th>
-                <th className="p-2 md:p-3">User</th>
-                <th className="p-2 md:p-3">Amount</th>
-                <th className="p-2 md:p-3">Method</th>
-                <th className="p-2 md:p-3">Status</th>
-                <th className="p-2 md:p-3">Date</th>
-                {/* <th className="p-2 md:p-3">Action</th> */}
+                <th className="p-2 lg:p-3">Payment ID</th>
+                <th className="p-2 lg:p-3">User</th>
+                <th className="p-2 lg:p-3">Amount</th>
+                <th className="p-2 lg:p-3">Method</th>
+                <th className="p-2 lg:p-3">Status</th>
+                <th className="p-2 lg:p-3">Date</th>
+              
               </tr>
             </thead>
             <tbody>
               {filteredPayments.map((payment) => (
                 <tr key={payment.id} className="border-b">
-                  <td className="p-2 md:p-3 whitespace-nowrap">{payment.id}</td>
-                  <td className="p-2 md:p-3 whitespace-nowrap">{payment.user}</td>
-                  <td className="p-2 md:p-3 whitespace-nowrap">
+                  <td className="p-2 lg:p-3 whitespace-nowrap">{payment.id}</td>
+                  <td className="p-2 lg:p-3 whitespace-nowrap">{payment.user}</td>
+                  <td className="p-2 lg:p-3 whitespace-nowrap">
                     {payment.amount} tk
                   </td>
                   <td className="p-2 md:p-3 whitespace-nowrap">
                     {payment.method}
                   </td>
-                  <td className="p-2 md:p-3 text-green-600 capitalize whitespace-nowrap">
+                  <td className="p-2 lg:p-3 text-green-600 capitalize whitespace-nowrap">
                     {payment.status}
                   </td>
-                  <td className="p-2 md:p-3 whitespace-nowrap">{payment.date}</td>
-                  <td className="p-2 md:p-3">
-                    {/* <button
-                      className="px-2 py-1 md:px-3 md:py-2 
-                                 bg-gradient-to-r from-blue-500 to-indigo-600 
-                                 text-white font-semibold rounded-lg shadow-md 
-                                 transition-transform transform hover:scale-105 
-                                 hover:from-indigo-600 hover:to-blue-500 
-                                 text-xs sm:text-sm md:text-base"
-                    >
-                      Download
-                    </button> */}
-                  </td>
+                  <td className="pl-2 pr-2 md:-pr-5 lg:p-3 whitespace-nowrap">{payment.date}</td>
+                  
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </Container>
+      
     </div>
   );
 };

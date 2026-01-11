@@ -72,7 +72,7 @@ const ManageUsers = () => {
           <thead>
             <tr className=" text-sm md:text-base">
               {/* ID column hidden on small screens */}
-              <th className="p-2 hidden sm:table-cell">ID</th>
+              <th className="p-2 md:hidden sm:table-cell">ID</th>
               <th className="p-2">Name</th>
               <th className="p-2">Email</th>
               <th className="p-2">Role</th>
@@ -91,7 +91,7 @@ const ManageUsers = () => {
                   }`}
                 >
                   {/* ID column hidden on small screens */}
-                  <td className="p-2 hidden sm:table-cell">{user._id}</td>
+                  <td className="p-2 md:hidden sm:table-cell">{user._id}</td>
                   <td className="p-2">{user.name}</td>
                   <td className="p-2">{user.email}</td>
                   <td className="p-2 capitalize">{user.role}</td>

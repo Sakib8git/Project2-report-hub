@@ -41,26 +41,26 @@ const SubscribeModal = ({ isOpen, onClose, profile }) => {
         <div className="flex min-h-full items-center justify-center p-4">
           <DialogPanel
             transition
-            className="w-full max-w-md rounded-xl bg-white p-6 shadow-lg duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
+            className="w-full max-w-md rounded-xl bg-base-200 p-6 shadow-lg duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
           >
             <DialogTitle
               as="h3"
-              className="text-lg font-semibold text-gray-800 mb-4"
+              className="text-lg font-semibold  mb-4"
             >
               Subscription Payment
             </DialogTitle>
 
-            <div className="space-y-2 text-gray-700">
+            <div className="space-y-2 ">
               <p>
                 <strong>Name:</strong> {name}
               </p>
               <p>
                 <strong>Email:</strong> {email}
               </p>
-              <p>
+              <p className="text-red-400">
                 <strong>Status:</strong> {status}
               </p>
-              <p>
+              <p >
                 <strong>Charge:</strong> 1000 tk
               </p>
             </div>

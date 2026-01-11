@@ -47,6 +47,9 @@ const Login = () => {
     } else if (role === "admin") {
       form.email.value = "admin@sakib.com";
       form.password.value = "Anik1122";
+    } else if (role === "user") {
+      form.email.value = "demo@user.com";
+      form.password.value = "Anik1122";
     }
   };
 
@@ -181,6 +184,13 @@ const Login = () => {
             className="bg-purple-500 text-white px-3 py-2 rounded-md"
           >
             Demo Admin
+          </button>
+          <button
+            type="button"
+            onClick={() => fillCredentials("user")}
+            className="bg-purple-500 text-white px-3 py-2 rounded-md"
+          >
+            Demo User
           </button>
         </div>
       </div>

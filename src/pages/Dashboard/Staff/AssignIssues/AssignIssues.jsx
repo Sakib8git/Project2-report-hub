@@ -67,7 +67,7 @@ const AssignedIssues = () => {
         <table className="min-w-full text-left text-sm sm:text-base">
           <thead>
             <tr className="">
-              <th className="p-2">ID</th>
+              {/* <th className="p-2">ID</th> */}
               <th className="p-2">Title</th>
               <th className="p-2">Status</th>
               <th className="p-2">Priority</th>
@@ -80,7 +80,7 @@ const AssignedIssues = () => {
                 key={issue._id}
                 className={issue.boosted ? " font-semibold" : ""}
               >
-                <td className="p-2 whitespace-nowrap">{issue._id}</td>
+                {/* <td className="p-2 whitespace-nowrap">{issue._id}</td> */}
                 <td className="p-2 whitespace-nowrap">{issue.title}</td>
                 <td className="p-2 capitalize whitespace-nowrap">
                   {issue.status}
@@ -97,7 +97,7 @@ const AssignedIssues = () => {
                         newStatus: e.target.value,
                       })
                     }
-                    className="border px-2 py-1 rounded text-xs sm:text-sm"
+                    className="border bg-base-200 px-2 py-1 rounded text-xs sm:text-sm"
                   >
                     <option value={issue.status}>{issue.status}</option>
                     {statusOptions

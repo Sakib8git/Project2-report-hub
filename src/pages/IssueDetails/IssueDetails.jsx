@@ -81,6 +81,8 @@ const IssueDetails = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
+      background: "rgba(250,250,255,0.85)", 
+      backdrop: "rgba(0,0,0,0.6)",
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -143,7 +145,6 @@ const IssueDetails = () => {
   // boost
   const handleBoost = async () => {
     try {
-      
       const paymentInfo = {
         issueId: issue._id,
         email: user?.email,
@@ -274,7 +275,7 @@ const IssueDetails = () => {
               )} */}
               {isBlocked ? (
                 <p className="text-red-600 font-semibold mt-2">
-                   You are blocked. Actions are disabled.
+                  You are blocked. Actions are disabled.
                 </p>
               ) : (
                 canBoost && (
@@ -291,8 +292,8 @@ const IssueDetails = () => {
         </div>
 
         {showModal && (
-          <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white rounded-lg p-6 w-96 shadow-lg">
+          <div className="fixed inset-0 z-50  flex justify-center items-center">
+            <div className="bg-base-300 rounded-lg p-6 w-96 shadow-lg">
               <h2 className="text-xl font-bold mb-4">Edit Issue</h2>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <input
@@ -305,7 +306,7 @@ const IssueDetails = () => {
                 />
                 <select
                   {...register("category")}
-                  className="w-full border rounded px-3 py-2"
+                  className="w-full bg-base-300 border rounded px-3 py-2"
                 >
                   <option value="Streetlight">Streetlight</option>
                   <option value="Road">Road</option>
@@ -316,7 +317,7 @@ const IssueDetails = () => {
                   <button
                     type="button"
                     onClick={() => setShowModal(false)}
-                    className="px-3 py-1  rounded hover:bg-gray-400"
+                    className="px-3 py-1  rounded hover:bg-red-400"
                   >
                     Cancel
                   </button>
@@ -421,10 +422,12 @@ const IssueDetails = () => {
                 <span className="font-semibold">Status:</span> {issue.status}
               </p>
               <p className="text-sm ">
-                <span className="font-semibold ">Closed By:<span className="text-blue-600">Admin Panel</span> </span>{" "}
+                <span className="font-semibold ">
+                  Closed By:<span className="text-blue-600">Admin Panel</span>{" "}
+                </span>{" "}
                 {issue.staffInfo}
               </p>
-              
+
               {issue.resolvedAt && (
                 <p className="text-sm ">
                   <span className="font-semibold">Resolved On:</span>{" "}

@@ -51,8 +51,8 @@ const StaffProfile = () => {
     return <p className="text-center text-red-500">Staff profile not found</p>;
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
-      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
+    <div className="min-h-screen  py-10 px-4">
+      <div className="max-w-4xl mx-auto bg-base-200 shadow-lg rounded-xl overflow-hidden">
         {/* Cover Image */}
         <img src={coverImg} alt="cover" className="w-full h-48 object-cover" />
 
@@ -69,20 +69,20 @@ const StaffProfile = () => {
 
           {/* Info */}
           <div className="flex-1 w-full">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            <h2 className="text-2xl font-bold  mb-2">
               {staffProfile?.name || user?.displayName || "Unknown Staff"}
             </h2>
 
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="text-sm  mb-1">
               <strong>Email:</strong> {staffProfile?.email || user?.email}
             </p>
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="text-sm  mb-1">
               <strong>Phone:</strong> {staffProfile?.phone || "N/A"}
             </p>
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="text-sm  mb-1">
               <strong>Role:</strong> {staffProfile?.role || "N/A"}
             </p>
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="text-sm  mb-1">
               <strong>User ID:</strong> {user?.uid}
             </p>
 

@@ -32,8 +32,8 @@ const Sidebar = () => {
   return (
     <>
       {/* Mobile Top Bar */}
-      <div className="bg-gradient-to-r from-green-500 to-blue-600 text-white flex justify-between md:hidden shadow-lg">
-        <div className="block cursor-pointer p-4 font-bold">
+      <div className="  flex justify-between md:hidden shadow-lg">
+        <div className="block cursor-pointer  p-4 font-bold">
           <Link to="/">
             <h2 className="text-2xl font-extrabold tracking-wide">ReportHub</h2>
           </Link>
@@ -60,14 +60,14 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`z-50 fixed top-0 left-0 h-screen w-64 md:w-16 bg-gradient-to-b from-green-500 to-blue-600 text-white flex flex-col justify-between items-center py-6 shadow-xl
-        ${isActive ? "translate-x-0" : "-translate-x-full"} 
-        md:translate-x-0 transition-transform duration-300 ease-in-out`}
+        className={`z-50  fixed top-0 left-0 h-screen w-64 md:w-16 bg-gradient-to-b from-white/30 to-white/10 backdrop-blur-md border border-white/20 shadow-lg flex flex-col justify-between items-center py-6
+  ${isActive ? "translate-x-0" : "-translate-x-full"} 
+  md:translate-x-0 transition-transform duration-300 ease-in-out`}
       >
         {/* Logo */}
         <Link
           to="/"
-          className="hidden md:block mb-6 text-xl font-extrabold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent"
+          className="hidden md:block mb-6 text-xl font-extrabold e bg-clip-text"
         >
           <AiTwotoneHome />
         </Link>
@@ -81,7 +81,7 @@ const Sidebar = () => {
             )}`}
             title="Dashboard Overview"
           >
-            <BsGraphUp className="w-5 h-5" />
+            <BsGraphUp className="w-5 h-5 " />
           </Link>
 
           {/* note:citizen */}
@@ -100,7 +100,7 @@ const Sidebar = () => {
           className="p-3 rounded-lg hover:bg-white hover:text-red-600 transition"
           title="Logout"
         >
-          <GrLogout className="w-5 h-5" />
+          <GrLogout className="w-5 h-5 " />
         </button>
       </div>
     </>

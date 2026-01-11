@@ -131,7 +131,7 @@ const ReportIssue = () => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-white shadow rounded-lg p-6 space-y-4"
+          className=" bg-base-200  shadow rounded-lg p-6 space-y-4"
         >
           {/* Name */}
           <div>
@@ -141,7 +141,7 @@ const ReportIssue = () => {
               defaultValue={user?.displayName}
               readOnly
               {...register("name")}
-              className="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed"
+              className="w-full border rounded px-3 py-2 cursor-not-allowed"
             />
           </div>
 
@@ -153,7 +153,7 @@ const ReportIssue = () => {
               defaultValue={user?.email}
               readOnly
               {...register("email")}
-              className="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed"
+              className="w-full border rounded px-3 py-2  cursor-not-allowed"
             />
           </div>
 

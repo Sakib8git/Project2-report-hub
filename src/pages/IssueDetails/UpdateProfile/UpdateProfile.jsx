@@ -60,14 +60,14 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
-      <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl p-6">
+    <div className="min-h-screen  py-10 px-4">
+      <div className="max-w-xl mx-auto shadow-lg rounded-xl p-6">
         <h1 className="text-2xl font-bold mb-6">Update Profile</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium ">
               Name
             </label>
             <input
@@ -81,14 +81,14 @@ const UpdateProfile = () => {
 
           {/* Image */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium ">
               Profile Image
             </label>
             <input
               type="file"
               accept="image/*"
               onChange={(e) => setImageFile(e.target.files[0])}
-              className="mt-1 block w-full text-sm text-gray-600"
+              className="mt-1 block w-full text-sm "
             />
           </div>
 

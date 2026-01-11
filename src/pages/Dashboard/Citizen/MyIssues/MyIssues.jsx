@@ -53,7 +53,7 @@ const MyIssues = () => {
   // edit
   const handleUpdate = async (e) => {
     if (isBlocked) {
-      toast.error("🚫 You are blocked");
+      toast.error("You are blocked");
       navigate("/");
       return;
     }
@@ -95,6 +95,8 @@ const MyIssues = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
+      background: "rgba(250,250,255,0.85)", // ✅ semi-transparent background
+      backdrop: "rgba(0,0,0,0.6)",
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -177,7 +179,7 @@ const MyIssues = () => {
           >
             <div>
               <h2 className="text-xl font-semibold">{issue.title}</h2>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 Category: {issue.category} | Status:{" "}
                 <span
                   className={`font-bold ${
@@ -187,13 +189,13 @@ const MyIssues = () => {
                       ? "text-blue-600"
                       : issue.status === "Resolved"
                       ? "text-green-600"
-                      : "text-gray-600"
+                      : ""
                   }`}
                 >
                   {issue.status}
                 </span>
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm ">
                 Location: {issue.location}
               </p>
             </div>
@@ -227,8 +229,8 @@ const MyIssues = () => {
 
       {/* Edit Modal (UI only) */}
       {showModal && selectedIssue && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white rounded-lg p-6 w-96 shadow-lg">
+        <div className="fixed inset-0  flex justify-center items-center">
+          <div className="bg-base-300 rounded-lg p-6 w-96 shadow-lg">
             <h2 className="text-xl font-bold mb-4">Edit Issue</h2>
             <form onSubmit={handleUpdate} className="space-y-4">
               <input
