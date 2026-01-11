@@ -27,6 +27,7 @@ import Feedback from "../pages/Home/Feedback/Feedback";
 import UpdateProfile from "../pages/IssueDetails/UpdateProfile/UpdateProfile";
 import BoostPaySuccess from "../pages/PaymentSuccess/BoostPaySuccess/BoostPaySuccess";
 import HighSuccess from "../pages/PaymentSuccess/highSuccess";
+import Contact from "../pages/Contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact></Contact>,
       },
       {
         path: "feedback",

@@ -12,13 +12,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-  // apply theme on load
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // toggle function
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
@@ -39,9 +37,7 @@ const Navbar = () => {
                 to="/"
                 className={({ isActive }) =>
                   `text-sm font-semibold transition ${
-                    isActive
-                      ? "underline text-green-600"
-                      : "hover:text-green-600"
+                    isActive ? "underline text-green-600" : "hover:text-green-600"
                   }`
                 }
               >
@@ -52,9 +48,7 @@ const Navbar = () => {
                 to="/all-issues"
                 className={({ isActive }) =>
                   `text-sm font-semibold transition ${
-                    isActive
-                      ? "underline text-green-600"
-                      : "hover:text-green-600"
+                    isActive ? "underline text-green-600" : "hover:text-green-600"
                   }`
                 }
               >
@@ -65,24 +59,31 @@ const Navbar = () => {
                 to="/about"
                 className={({ isActive }) =>
                   `hidden md:block text-sm font-semibold transition ${
-                    isActive
-                      ? "underline text-green-600"
-                      : "hover:text-green-600"
+                    isActive ? "underline text-green-600" : "hover:text-green-600"
                   }`
                 }
               >
                 About
               </NavLink>
 
-              {/* ✅ Feedback link only if user is logged in */}
+              {/* ✅ Contact link */}
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `hidden md:block text-sm font-semibold transition ${
+                    isActive ? "underline text-green-600" : "hover:text-green-600"
+                  }`
+                }
+              >
+                Contact
+              </NavLink>
+
               {user && (
                 <NavLink
                   to="/feedback"
                   className={({ isActive }) =>
                     `hidden md:block text-sm font-semibold transition ${
-                      isActive
-                        ? "underline text-green-600"
-                        : "hover:text-green-600"
+                      isActive ? "underline text-green-600" : "hover:text-green-600"
                     }`
                   }
                 >
@@ -94,14 +95,12 @@ const Navbar = () => {
             {/* Dropdown Menu */}
             <div className="relative">
               <div className="flex flex-row items-center gap-3">
-                {/* Dropdown btn */}
                 <div
                   onClick={() => setIsOpen(!isOpen)}
                   className="p-4 md:py-1 md:px-2 border border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
                 >
                   <AiOutlineMenu />
                   <div className="hidden md:block">
-                    {/* Avatar */}
                     <img
                       className="rounded-full"
                       referrerPolicy="no-referrer"
@@ -117,13 +116,6 @@ const Navbar = () => {
               {isOpen && (
                 <div className="absolute rounded-xl shadow-md w-[60vw] md:w-[10vw] bg-base-100 text-base-content overflow-hidden right-0 top-12 text-sm">
                   <div className="flex flex-col cursor-pointer">
-                    {/* <Link
-                      to="/feedback"
-                      className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
-                    >
-                      Feedback
-                    </Link> */}
-
                     {user ? (
                       <>
                         <div className="px-4 py-3 hover:bg-[#cbeef3] hover:text-[#1A4A6C] transition font-semibold cursor-pointer">
@@ -164,21 +156,24 @@ const Navbar = () => {
                         </Link>
                       </>
                     )}
-                    {/* ✅ About & Feedback visible only on sm */}
+
+                    {/* ✅ About & Contact visible only on sm */}
                     <Link
                       to="/about"
                       className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
                     >
                       About
                     </Link>
+                    <Link
+                      to="/contact"
+                      className="block md:hidden px-4 py-3 hover:bg-neutral hover:text-base-100 transition font-semibold"
+                    >
+                      Contact
+                    </Link>
 
                     {/* ✅ Theme Toggle Button */}
-                    {/* ✅ Theme Toggle Button */}
                     <div className="px-4 py-3 transition font-semibold cursor-pointer">
-                      <Switch
-                        onChange={toggleTheme}
-                        checked={theme === "dark"}
-                      />
+                      <Switch onChange={toggleTheme} checked={theme === "dark"} />
                     </div>
                   </div>
                 </div>
