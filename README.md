@@ -1,4 +1,4 @@
-[📢ReportHub](https://report-hub-clint.netlify.app/)
+[📢ReportHub\](https://project-report-hub.netlify.app/)
 
 A Modern Public Infrastructure Issue Reporting System
 ReportHub is a digital civic engagement platform designed to empower citizens to report real-world public infrastructure issues such as broken streetlights, potholes, water leakage, garbage overflow, damaged footpaths, and more. It bridges the gap between citizens and municipal authorities by ensuring transparency, faster response times, and efficient service delivery.
@@ -29,17 +29,17 @@ Pending → In-Progress → Resolved → Closed
 
 ⚙️ How It Works
 
-1.       Citizen Reporting
+1.          Citizen Reporting
     Citizens submit a report with issue details, photos, and location.
-2.       Admin Review & Assignment
+2.          Admin Review & Assignment
     Admin reviews the report and assigns it to staff for verification.
-3.       Staff Verification & Progress Update
+3.          Staff Verification & Progress Update
     Staff verifies the issue and updates its progress.
-4.       Status Tracking
+4.          Status Tracking
     The system tracks issue status from Pending → In-Progress → Resolved → Closed.
-5.       Citizen Updates
+5.          Citizen Updates
     Citizens receive notifications and can track their issue anytime.
-6.       Premium Support
+6.          Premium Support
     Premium citizens get priority handling for faster resolution.
 
 📌 Installation & Setup
@@ -65,17 +65,19 @@ npm run dev
 
 <!-- Information -->
 
-Admin:
+<!-- Admin: -->
+
 admin@sakib.com
 Anik1122
 
-Staff
+<!-- Staff -->
+
 qalafigo@mailinator.com
 Anik1122
 
 Anik1122
 
-<!-- blocked citizen -->
+<!--  citizen -->
 
-block@citizen.com
+demo@user.com
 Anik1122
