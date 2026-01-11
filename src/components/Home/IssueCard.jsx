@@ -216,7 +216,7 @@ const IssuesCard = () => {
             <button
               disabled={page === 1}
               onClick={() => setPage((prev) => prev - 1)}
-              className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+              className="px-4 py-2 bg-blue-400 rounded disabled:opacity-50"
             >
               Previous
             </button>
@@ -226,7 +226,7 @@ const IssuesCard = () => {
             <button
               disabled={page === totalPages}
               onClick={() => setPage((prev) => prev + 1)}
-              className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+              className="px-4 py-2 bg-blue-400 rounded disabled:opacity-50"
             >
               Next
             </button>

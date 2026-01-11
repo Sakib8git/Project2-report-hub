@@ -36,8 +36,10 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `text-sm font-semibold transition ${
-                    isActive ? "underline text-green-600" : "hover:text-green-600"
+                  `text-sm font-semibold px-3 py-2 rounded-lg transition duration-300 ease-in-out ${
+                    isActive
+                      ? "bg-green-100 text-green-700"
+                      : "hover:bg-green-50 hover:text-green-600"
                   }`
                 }
               >
@@ -47,8 +49,10 @@ const Navbar = () => {
               <NavLink
                 to="/all-issues"
                 className={({ isActive }) =>
-                  `text-sm font-semibold transition ${
-                    isActive ? "underline text-green-600" : "hover:text-green-600"
+                  `text-sm font-semibold px-3 py-2 rounded-lg transition duration-300 ease-in-out ${
+                    isActive
+                      ? "bg-sky-100 text-green-700"
+                      : "hover:bg-sky-50 hover:text-green-600"
                   }`
                 }
               >
@@ -58,8 +62,10 @@ const Navbar = () => {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  `hidden md:block text-sm font-semibold transition ${
-                    isActive ? "underline text-green-600" : "hover:text-green-600"
+                  `hidden md:block text-sm font-semibold px-3 py-2 rounded-lg transition duration-300 ease-in-out ${
+                    isActive
+                      ? "bg-green-100 text-green-700"
+                      : "hover:bg-green-50 hover:text-green-600"
                   }`
                 }
               >
@@ -70,8 +76,10 @@ const Navbar = () => {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  `hidden md:block text-sm font-semibold transition ${
-                    isActive ? "underline text-green-600" : "hover:text-green-600"
+                  `hidden md:block text-sm font-semibold px-3 py-2 rounded-lg transition duration-300 ease-in-out ${
+                    isActive
+                      ? "bg-green-100 text-green-700"
+                      : "hover:bg-green-50 hover:text-green-600"
                   }`
                 }
               >
@@ -82,8 +90,10 @@ const Navbar = () => {
                 <NavLink
                   to="/feedback"
                   className={({ isActive }) =>
-                    `hidden md:block text-sm font-semibold transition ${
-                      isActive ? "underline text-green-600" : "hover:text-green-600"
+                    `hidden md:block text-sm font-semibold px-3 py-2 rounded-lg transition duration-300 ease-in-out ${
+                      isActive
+                        ? "bg-green-100 text-green-700"
+                        : "hover:bg-green-50 hover:text-green-600"
                     }`
                   }
                 >
