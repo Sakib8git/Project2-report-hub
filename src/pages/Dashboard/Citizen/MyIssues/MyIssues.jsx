@@ -212,13 +212,13 @@ const MyIssues = () => {
               )}
               <button
                 onClick={() => handleDelete(issue._id)}
-                className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 flex items-center gap-1"
+                className="px-3 py-1 bg-red-500 text-white rounded-2xl hover:bg-red-600 flex items-center gap-1"
               >
                 <FaTrash /> Delete
               </button>
               <Link
                 to={`/issue-details/${issue._id}`} // ✅ navigate by _id
-                className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 flex items-center gap-1"
+                className="px-3 py-1 custom-btn2  flex items-center gap-1"
               >
                 <FaEye /> View
               </Link>

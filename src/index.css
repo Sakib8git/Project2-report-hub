@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin "daisyui";
 
 /* Utility classes for consistent button and text styling */
@@ -17,3 +17,79 @@
 .bg-neutral {
   @apply bg-neutral;
 }
+
+.custom-btn {
+  background-color: #00A63E;
+  color: #222222;
+  border-radius: 30px;
+  /* font-size: medium; */
+  font-weight: 500;
+  outline: none;            
+  transition: all 0.3s ease;
+}
+.custom-btn:hover {
+  background-color: #9ded6d;
+  transition: all;
+  /* color: #222222; */
+}
+/* .custom-btn2 {
+  background-color: #a3bfdd;
+  color: #112a46;
+  border-radius: 30px;
+  font-size: medium;
+  padding: 0.5rem 1.5rem; 
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.custom-btn2:hover {
+  background-color: #bdd3ea;
+  
+} */
+
+/* Tailwind style equivalent in custom CSS */
+.custom-btn2 {
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #ffffff;           /* text-white */
+  /* padding: 0.5rem 1.5rem;    */
+  border-radius: 30px;  
+  font-weight: 500;
+  outline: none;            
+  transition: all 0.3s ease;
+}
+
+.custom-btn2:hover {
+  background-color: #2563eb; /* hover:bg-blue-600 */
+}
+
+.custom-btn2:focus {
+  box-shadow: 0 0 0 2px #60a5fa; /* focus:ring-2 focus:ring-blue-400 */
+}
+
+.dark .custom-btn2 {
+  background-color: #2563eb; /* dark:bg-blue-600 */
+}
+
+.dark .custom-btn2:hover {
+  background-color: #1d4ed8; /* dark:hover:bg-blue-700 */
+}
+
+.dark .custom-btn2:focus {
+  box-shadow: 0 0 0 2px #3b82f6; /* dark:focus:ring-blue-500 */
+}
+
+.custom-heading {
+  font-size: 32px;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.glassy {
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent */
+  backdrop-filter: blur(12px);           /* blur effect */
+  -webkit-backdrop-filter: blur(12px);   /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* soft shadow */
+}
+

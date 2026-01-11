@@ -110,7 +110,7 @@ const IssuesCard = () => {
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="border px-3 py-2 rounded"
+          className="border px-3 bg-base-200 py-2 rounded"
         >
           <option value="">All Status</option>
           <option value="pending">Pending</option>
@@ -121,7 +121,7 @@ const IssuesCard = () => {
         <select
           value={priority}
           onChange={(e) => setPriority(e.target.value)}
-          className="border px-3 py-2 rounded"
+          className="border px-3 py-2 bg-base-200 rounded"
         >
           <option value="">All Priority</option>
           <option value="High">High</option>
@@ -130,7 +130,7 @@ const IssuesCard = () => {
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="border px-3 py-2 rounded"
+          className="border px-3 py-2 bg-base-200 rounded"
         >
           <option value="">All Category</option>
           <option value="Road">Road</option>
@@ -146,7 +146,7 @@ const IssuesCard = () => {
             {sortedIssues.map((issue) => (
               <div
                 key={issue._id}
-                className="rounded-lg shadow-md overflow-hidden "
+                className="rounded-lg bg-base-200 shadow-md overflow-hidden "
               >
                 {/* Image */}
                 <img
@@ -195,15 +195,15 @@ const IssuesCard = () => {
                   <div className="flex justify-between items-center mt-4">
                     <button
                       onClick={() => handleUpvote(issue._id)}
-                      className="px-3 py-1 bg-[#57f06d] text-[#063858] hover:text-[#110558]  hover:bg-[#50b95f] rounded-xl"
+                      className="px-3 py-1 custom-btn2"
                     >
-                    Upvote ({issue.upvote || 0})
+                    Vote ({issue.upvote || 0})
                     </button>
                     <Link
                       to={`/issue-details/${issue._id}`}
-                      className="px-3 py-1 btn-primary rounded-xl"
+                      className="px-3 py-1 custom-btn"
                     >
-                      View Details
+                      Details
                     </Link>
                   </div>
                 </div>

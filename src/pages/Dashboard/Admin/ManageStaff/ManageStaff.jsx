@@ -264,13 +264,13 @@ const ManageStaff = () => {
                         setFormData(staff);
                         setShowUpdateModal(true);
                       }}
-                      className="bg-green-500 px-3 py-1 rounded-md text-white hover:bg-green-600 transition shadow-sm"
+                      className="custom-btn  px-3 py-1 rounded-md text-white hover:bg-green-600 transition shadow-sm"
                     >
                       Update
                     </button>
                     <button
                       onClick={() => handleDeleteStaff(staff._id)}
-                      className="bg-red-500 px-3 py-1 rounded-md text-white hover:bg-red-600 transition shadow-sm"
+                      className="bg-red-500 px-3 py-1 rounded-3xl text-white hover:bg-red-600 transition shadow-sm"
                     >
                       Delete
                     </button>

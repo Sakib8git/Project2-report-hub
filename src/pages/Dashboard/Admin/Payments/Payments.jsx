@@ -99,7 +99,7 @@ const Payments = () => {
         <select
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)}
-          className="border px-3 py-2 rounded"
+          className="border px-3 py-2 bg-base-200 rounded"
         >
           <option value="">Filter by Status</option>
           <option value="success">Success</option>
@@ -110,7 +110,7 @@ const Payments = () => {
         <select
           value={filterMethod}
           onChange={(e) => setFilterMethod(e.target.value)}
-          className="border px-3 py-2 rounded"
+          className="border px-3 py-2 bg-base-200 rounded"
         >
           <option value="">Filter by Method</option>
           <option value="Stripe">Stripe</option>

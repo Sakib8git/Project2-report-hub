@@ -123,7 +123,7 @@ const AdminIssues = () => {
                       {issue.status?.toLowerCase() === "pending" && !issue.assignedStaff && (
                         <button
                           onClick={() => setSelectedIssue(issue._id)}
-                          className="bg-blue-500 px-3 py-1 md:px-5 md:py-2 rounded text-white hover:bg-blue-700 text-xs md:text-sm"
+                          className="custom-btn2 px-3 py-1 md:px-5 md:py-2 rounded  text-xs md:text-sm"
                         >
                           Assign
                         </button>
@@ -131,7 +131,7 @@ const AdminIssues = () => {
                       {issue.status?.toLowerCase() === "pending" && (
                         <button
                           onClick={() => handleRejectIssue(issue._id)}
-                          className="bg-red-500 px-3 py-1 md:px-5 md:py-2 rounded text-white hover:bg-red-700 text-xs md:text-sm"
+                          className="bg-red-500 px-3 py-1 md:px-5 md:py-2 rounded-3xl text-white hover:bg-red-700 text-xs md:text-sm"
                         >
                           Reject
                         </button>
@@ -164,7 +164,7 @@ const AdminIssues = () => {
               <div className="flex flex-col md:flex-row justify-end gap-3">
                 <button
                   onClick={() => setSelectedIssue(null)}
-                  className="bg-base-300 px-4 py-2 md:px-5 md:py-2 rounded text-white hover:bg-gray-600 text-sm md:text-base"
+                  className="bg-base-300 px-4 py-2 md:px-5 md:py-2 rounded-3xl text-white hover:bg-gray-600 text-sm md:text-base"
                 >
                   Cancel
                 </button>
@@ -179,7 +179,7 @@ const AdminIssues = () => {
                     }
                   }}
                   disabled={!selectedStaff}
-                  className="bg-blue-500 px-4 py-2 md:px-5 md:py-2 rounded text-white hover:bg-blue-700 disabled:opacity-50 text-sm md:text-base"
+                  className="custom-btn2 px-4 py-2 md:px-5 md:py-2 rounded   disabled:opacity-50 text-sm md:text-base"
                 >
                   Confirm
                 </button>

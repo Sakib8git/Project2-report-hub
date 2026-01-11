@@ -42,8 +42,8 @@ const FAQ = () => {
 
   return (
     <section className="text-base-content py-12 px-6 md:px-16">
-      <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-2">
-        <FaRegQuestionCircle className="text-green-600" /> Frequently Asked Questions
+      <h2 className="text-2xl md:text-3xl custom-heading  -mt-10">
+         Frequently Asked Questions
       </h2>
       <div className="max-w-3xl mx-auto space-y-4">
         {faqs.map((faq, index) => (

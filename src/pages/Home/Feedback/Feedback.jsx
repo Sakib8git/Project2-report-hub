@@ -94,7 +94,7 @@ const Feedback = () => {
             />
             <label htmlFor="comment">Comment</label>
           </div>
-          <Button label="Submit" type="submit" className="w-full" />
+          <button label="Submit" type="submit" className="w-full custom-btn2 p-3" >SEND</button>
         </form>
         <RelevantContent />
       </div>

@@ -128,7 +128,7 @@ const Contact = () => {
             <div className="text-center">
               <motion.button
                 type="submit"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500"
+                className="custom-btn2  px-6 py-2   focus:outline-none focus:ring-2 "
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -38,7 +38,7 @@ const ResolveCard = () => {
 
   return (
     <Container>
-      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8 pt-12">
+      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8 ">
         {resolvedReports.map((resolve, index) => {
           let positionClass = "";
           if (resolvedReports.length === 6) {
@@ -96,7 +96,7 @@ const ResolveCard = () => {
                 <div className="flex justify-end items-center mt-4">
                   <Link
                     to={`/issue-details/${resolve._id}`}
-                    className="px-3 py-1 bg-[#16476A] text-white rounded hover:bg-[#3B9797] transition-all"
+                    className="px-3 py-1 custom-btn  transition-all"
                   >
                     View Details
                   </Link>

@@ -95,7 +95,7 @@ const StatisticsSection = () => {
   return (
     <div className="py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-green-700">
+        <h2 className=" text-2xl md:text-3xl custom-heading -mt-10">
           Our Impact in Numbers
         </h2>
 

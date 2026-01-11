@@ -112,8 +112,8 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white">
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
+    <div className="flex justify-center items-center min-h-screen ">
+      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 glassy  ">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
           <p className="text-sm text-gray-400">Welcome to ReportHub</p>
@@ -252,7 +252,7 @@ const SignUp = () => {
           Already have an account?{" "}
           <Link
             to="/login"
-            className="hover:underline hover:text-lime-500 text-gray-600"
+            className="hover:underline text-blue-400 hover:text-blue-500 "
           >
             Login
           </Link>

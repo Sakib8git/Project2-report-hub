@@ -89,7 +89,7 @@ const CitizenProfile = () => {
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 to="/dashboard/update-profile"
-                className="bg-lime-500 px-6 py-2 rounded-lg text-white hover:bg-lime-700"
+                className=" px-6 py-2 custom-btn2 "
               >
                 Update Profile
               </Link>
@@ -97,7 +97,7 @@ const CitizenProfile = () => {
                 <>
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="bg-blue-500 px-6 py-2 rounded-lg text-white hover:bg-blue-700"
+                    className=" px-6 py-2 custom-btn "
                   >
                     Subscribe (1000tk)
                   </button>

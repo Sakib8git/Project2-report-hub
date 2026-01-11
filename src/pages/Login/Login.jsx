@@ -78,8 +78,8 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white">
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
+    <div className="flex justify-center items-center min-h-screen ">
+      <div className="flex flex-col glassy max-w-md p-6 rounded-md sm:p-10  ">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Log In</h1>
           <p className="text-sm text-gray-400">
@@ -164,7 +164,7 @@ const Login = () => {
           <Link
             state={from}
             to="/signup"
-            className="hover:underline hover:text-sky-500 text-gray-600"
+            className="hover:underline text-sky-400 hover:text-sky-500 "
           >
             Sign up
           </Link>
@@ -174,21 +174,21 @@ const Login = () => {
           <button
             type="button"
             onClick={() => fillCredentials("staff")}
-            className="bg-green-500 text-white px-3 py-2 rounded-md"
+            className="custom-btn2 px-3"
           >
             Demo Staff
           </button>
           <button
             type="button"
             onClick={() => fillCredentials("admin")}
-            className="bg-purple-500 text-white px-3 py-2 rounded-md"
+            className="custom-btn px-3"
           >
             Demo Admin
           </button>
           <button
             type="button"
             onClick={() => fillCredentials("user")}
-            className="bg-purple-500 text-white px-3 py-2 rounded-md"
+            className="custom-btn2 p-3"
           >
             Demo User
           </button>

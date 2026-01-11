@@ -111,8 +111,8 @@ const ManageUsers = () => {
                       }
                       className={`px-3 py-1 rounded text-white text-xs md:text-sm ${
                         user.action === "block"
-                          ? "bg-green-500 hover:bg-green-700"
-                          : "bg-red-500 hover:bg-red-700"
+                          ? "custom-btn"
+                          : "bg-red-500 hover:bg-red-700 rounded-3xl"
                       }`}
                     >
                       {user.action === "block" ? "Unblock" : "Block"}
