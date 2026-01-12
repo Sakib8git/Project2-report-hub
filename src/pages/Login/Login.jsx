@@ -42,7 +42,7 @@ const Login = () => {
     if (!form) return;
 
     if (role === "staff") {
-      form.email.value = "qalafigo@mailinator.com";
+      form.email.value = "qalafigo@mailinaor.com";
       form.password.value = "Anik1122";
     } else if (role === "admin") {
       form.email.value = "admin@sakib.com";

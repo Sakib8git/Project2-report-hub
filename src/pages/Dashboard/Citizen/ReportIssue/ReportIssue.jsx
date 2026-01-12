@@ -192,7 +192,7 @@ const ReportIssue = () => {
             <label className="block font-semibold mb-1">Category</label>
             <select
               {...register("category", { required: "Category is required" })}
-              className="w-full border rounded px-3 py-2"
+              className="w-full border bg-base-100 rounded px-3 py-2"
             >
               <option value="">Select Category</option>
               <option value="Streetlight">Streetlight</option>
@@ -210,7 +210,7 @@ const ReportIssue = () => {
             <label className="block font-semibold mb-1">Location</label>
             <select
               {...register("location", { required: "Location is required" })}
-              className="w-full border rounded px-3 py-2"
+              className="w-full border bg-base-100 rounded px-3 py-2"
             >
               <option value="">Select Division</option>
               <option value="Dhaka">Dhaka</option>

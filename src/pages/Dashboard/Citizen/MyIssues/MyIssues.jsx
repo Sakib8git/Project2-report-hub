@@ -82,7 +82,7 @@ const MyIssues = () => {
   // delete
   const handleDelete = async (id) => {
     if (isBlocked) {
-      toast.error("🚫 You are blocked");
+      toast.error("You are blocked");
       navigate("/");
       return;
     }
@@ -149,7 +149,7 @@ const MyIssues = () => {
         <select
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)}
-          className="border rounded px-3 py-2"
+          className="border bg-base-100 rounded px-3 py-2"
         >
           <option value="">Filter by Status</option>
           <option value="Pending">Pending</option>
@@ -161,7 +161,7 @@ const MyIssues = () => {
         <select
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
-          className="border rounded px-3 py-2"
+          className="border bg-base-100 rounded px-3 py-2"
         >
           <option value="">Filter by Category</option>
           <option value="Streetlight">Streetlight</option>
@@ -171,61 +171,66 @@ const MyIssues = () => {
       </div>
 
       {/* Issues List */}
-      <div className="space-y-4">
-        {filteredIssues.map((issue) => (
-          <div
-            key={issue._id} // ✅ use MongoDB _id
-            className="border rounded-lg p-4 shadow flex justify-between items-center"
-          >
-            <div>
-              <h2 className="text-xl font-semibold">{issue.title}</h2>
-              <p className="text-sm ">
-                Category: {issue.category} | Status:{" "}
-                <span
-                  className={`font-bold ${
-                    issue.status === "Pending"
-                      ? "text-yellow-600"
-                      : issue.status === "In-Progress"
-                      ? "text-blue-600"
-                      : issue.status === "Resolved"
-                      ? "text-green-600"
-                      : ""
-                  }`}
-                >
-                  {issue.status}
-                </span>
-              </p>
-              <p className="text-sm ">
-                Location: {issue.location}
-              </p>
-            </div>
+      {/* Issues List */}
+<div className="space-y-4">
+  {filteredIssues.length === 0 ? (
+    <p className="text-center text-gray-500 font-semibold">
+      No issues found
+    </p>
+  ) : (
+    filteredIssues.map((issue) => (
+      <div
+        key={issue._id} // ✅ use MongoDB _id
+        className="border rounded-lg p-4 shadow flex justify-between items-center"
+      >
+        <div>
+          <h2 className="text-xl font-semibold">{issue.title}</h2>
+          <p className="text-sm">
+            Category: {issue.category} | Status:{" "}
+            <span
+              className={`font-bold ${
+                issue.status === "Pending"
+                  ? "text-yellow-600"
+                  : issue.status === "In-Progress"
+                  ? "text-blue-600"
+                  : issue.status === "Resolved"
+                  ? "text-green-600"
+                  : ""
+              }`}
+            >
+              {issue.status}
+            </span>
+          </p>
+          <p className="text-sm">Location: {issue.location}</p>
+        </div>
 
-            {/* Buttons */}
-            <div className="flex gap-2">
-              {issue.status === "Pending" && (
-                <button
-                  onClick={() => handleEdit(issue)}
-                  className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600 flex items-center gap-1"
-                >
-                  <FaEdit /> Edit
-                </button>
-              )}
-              <button
-                onClick={() => handleDelete(issue._id)}
-                className="px-3 py-1 bg-red-500 text-white rounded-2xl hover:bg-red-600 flex items-center gap-1"
-              >
-                <FaTrash /> Delete
-              </button>
-              <Link
-                to={`/issue-details/${issue._id}`} // ✅ navigate by _id
-                className="px-3 py-1 custom-btn2  flex items-center gap-1"
-              >
-                <FaEye /> View
-              </Link>
-            </div>
-          </div>
-        ))}
+        {/* Buttons */}
+        <div className="flex gap-2">
+          {issue.status === "Pending" && (
+            <button
+              onClick={() => handleEdit(issue)}
+              className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600 flex items-center gap-1"
+            >
+              <FaEdit /> Edit
+            </button>
+          )}
+          <button
+            onClick={() => handleDelete(issue._id)}
+            className="px-3 py-1 bg-red-500 text-white rounded-2xl hover:bg-red-600 flex items-center gap-1"
+          >
+            <FaTrash /> Delete
+          </button>
+          <Link
+            to={`/issue-details/${issue._id}`} // ✅ navigate by _id
+            className="px-3 py-1 custom-btn2 flex items-center gap-1"
+          >
+            <FaEye /> View
+          </Link>
+        </div>
       </div>
+    ))
+  )}
+</div>
 
       {/* Edit Modal (UI only) */}
       {showModal && selectedIssue && (
@@ -247,7 +252,7 @@ const MyIssues = () => {
               <select
                 name="category"
                 defaultValue={selectedIssue.category}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border  rounded px-3 py-2"
               >
                 <option value="Streetlight">Streetlight</option>
                 <option value="Road">Road</option>

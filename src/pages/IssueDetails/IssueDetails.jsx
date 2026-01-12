@@ -81,7 +81,7 @@ const IssueDetails = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-      background: "rgba(250,250,255,0.85)", 
+      background: "rgba(250,250,255,0.85)",
       backdrop: "rgba(0,0,0,0.6)",
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -189,18 +189,18 @@ const IssueDetails = () => {
           </div>
 
           {/* Info */}
-          <div className="md:w-1/2  shadow rounded-lg p-6 flex flex-col justify-between">
-            <div>
+          <div className="md:w-1/2  shadow rounded-lg p-6 flex flex-col justify-between ">
+            <div className="space-y-2">
               <p>
-                <span className="font-semibold">Category:</span>{" "}
+                <span className="font-semibold ">Category:</span>{" "}
                 {issue.category}
               </p>
               <p>
                 <span className="font-semibold">Status:</span>{" "}
                 <span
-                  className={`px-2 py-1 rounded text-white text-sm ${
+                  className={`px-2 py-1 rounded text-black  text-sm ${
                     issue.status === "Pending"
-                      ? "bg-yellow-500"
+                      ? "bg-yellow-300"
                       : issue.status === "In-Progress"
                       ? "bg-blue-500"
                       : issue.status === "Resolved"
@@ -212,9 +212,14 @@ const IssueDetails = () => {
                 </span>
               </p>
               <p>
-                <span className="font-semibold ">Priority:</span>{" "}
-                <span className="text-green-600 font-semibold">
-                  {" "}
+                <span className="font-semibold">Priority:</span>{" "}
+                <span
+                  className={`font-semibold ${
+                    issue.priority === "High"
+                      ? "text-red-600"
+                      : "text-green-600"
+                  }`}
+                >
                   {issue.priority}
                 </span>
               </p>
@@ -251,7 +256,7 @@ const IssueDetails = () => {
                       });
                       setShowModal(true);
                     }}
-                    className="flex items-center gap-2 px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+                    className="flex items-center gap-2 px-4 py-2 custom-btn2"
                   >
                     <FaEdit /> Edit
                   </button>
@@ -259,7 +264,7 @@ const IssueDetails = () => {
                 {canDelete && (
                   <button
                     onClick={handleDelete}
-                    className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                    className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-3xl hover:bg-red-600"
                   >
                     <FaTrash /> Delete
                   </button>
